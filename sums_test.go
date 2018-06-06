@@ -4,7 +4,7 @@ import "testing"
 import "fmt"
 
 func TestSum(t *testing.T) {
-    fmt.print("\n*************\n****TEST*****\n*************\n")
+    fmt.print("\n**************\n*****TEST*****\n**************\n")
     total := Sum(5, 5)
     if total != 10 {
        t.Errorf("Sum was incorrect, got: %d, want: %d.", total, 10)
