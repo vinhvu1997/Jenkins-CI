@@ -1,10 +1,12 @@
 package main
 
-import "testing"
-import "fmt"
+import (
+	"testing"
+	"fmt"
+)
 
 func TestSum(t *testing.T) {
-    fmt.print("\n**************\n*****TEST*****\n**************\n")
+    fmt.Print("\n**************\n**** TEST ****\n**************\n\n")
     total := Sum(5, 5)
     if total != 10 {
        t.Errorf("Sum was incorrect, got: %d, want: %d.", total, 10)
