@@ -19,5 +19,5 @@ func TestSum(t *testing.T) {
     if total != 0 {
 	t.Errorf("Sum was incorrect, got: %d, want: %d.", total, 0)
     }
-    fmt.Println("Done.")
+    fmt.Println("Done!")
 }
