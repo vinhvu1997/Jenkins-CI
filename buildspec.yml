@@ -9,17 +9,17 @@ version: 0.2
      # key: "value"
 
 phases:
-  #install:
-    #commands:
-      # - command
-      # - command
+  install:
+    commands:
+      - echo starting
+      - go test
   #pre_build:
     #commands:
       # - command
       # - command
-  build:
-    commands:
-	- go test
+  #build:
+    #commands:
+	#- go test
       # - command
       # - command
   #post_build:
