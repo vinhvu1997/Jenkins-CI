@@ -1,37 +1,8 @@
 version: 0.2
 
-#env:
-  #variables:
-     # key: "value"
-     # key: "value"
-  #parameter-store:
-     # key: "value"
-     # key: "value"
-
 phases:
   install:
     commands:
       - echo starting
       - go test
-  #pre_build:
-    #commands:
-      # - command
-      # - command
-  #build:
-    #commands:
-	#- go test
-      # - command
-      # - command
-  #post_build:
-    #commands:
-      # - command
-      # - command
-#artifacts:
-  #files:
-    # - location
-    # - location
-  #discard-paths: yes
-  #base-directory: location
-#cache:
-  #paths:
-    # - paths
+
