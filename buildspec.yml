@@ -5,4 +5,4 @@ phases:
     commands:
       - echo starting
       - go test
-
+      - go get github.com/TrustedKeep/kmip
