@@ -8,6 +8,7 @@ phases:
       - echo starting
       - go test
       - go get github.com/golang/dep
+      - find / -name "dep"
       - cd $GOPATH/src/github.com/golang/dep
       - go install ./...
 
