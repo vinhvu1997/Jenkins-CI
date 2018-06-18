@@ -3,6 +3,14 @@ version: 0.2
 phases:
   install:
     commands:
+      - export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+      - go env
       - echo starting
       - go test
-      - go get github.com/TrustedKeep/kmip
+      - go get github.com/golang/dep
+      - cd $GOPATH/src/github.com/golang/dep
+      - go install ./...
+
+
+
+
