@@ -1,0 +1,4 @@
+HELLO MY
+NAME IS
+"InstanceId": "i-5203422c",
+VINH VU
