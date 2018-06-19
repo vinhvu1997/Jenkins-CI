@@ -1,15 +1,38 @@
 version: 0.2
 
-phases:
+env:
+  variables:
+    SRC_DIR: /src/github.com/vinhvu1997/Jenkins-CI
+    GIT_REPO: github.com/vinhvu1997/Jenkins-CI
+    #S3_BUCKET:
+
+phases: 
   install:
     commands:
-      - mkdir -p "/go/src/github.com/vinhvu1997/Jenkins-CI"
-      - ln -s "${CODEBUILD_SRC_DIR}" "/go/src/github.com/vinhvu1997/Jenkins-CI"
-      - cd /go/src/github.com/vinhvu1997/Jenkins-CI
-      - go env
-      - go get -u github.com/golang/lint/golint
+      - pwd
+      - ls
+      - echo CODEBUILD_SRC_DIR - $CODEBUILD_SRC_DIR
+      - ls $CODEBUILD_SRC_DIR
+      - echo GOPATH - $GOPATH
+
+      - echo Build started
+      - echo "Running go tests"
+      - go test ${GIT_REPO}/gotests/
+      - echo Creating Binaries
+      - go install ${GIT_REPO}/gotests/
+      #- go build ${GIT_REPO}/gotests/sum.go
+      - go get -u github.com/golang/dep/cmd/dep
+      - dep ensure
   pre_build:
     commands:
+      - go run gotests/sum.go
       - pwd
-      - go get -t ./...
-      - go test .
+      - ls -l
+  post_build:
+    commands:
+      - echo Build completed
+# artifacts:
+#   files:
+#     - gotests
+#     #- sum
+#   discard-paths: no
