@@ -3,14 +3,13 @@ version: 0.2
 phases:
   install:
     commands:
-      - mkdir -p "/go/src/$(dirname ${PACKAGE})"
-      - ln -s "${CODEBUILD_SRC_DIR}" "/go/src/${PACKAGE}"
-      - echo "ENV:"
-      - env
+      - mkdir -p "/go/src/github.com/vinhvu1997/Jenkins-CI"
+      - ln -s "${CODEBUILD_SRC_DIR}" "/go/src/github.com/vinhvu1997/Jenkins-CI"
+      - cd /go/src/github.com/vinhvu1997/Jenkins-CI
+      - go env
       - go get -u github.com/golang/lint/golint
   pre_build:
     commands:
-      - cd "/go/src/${PACKAGE}"
       - pwd
       - go get -t ./...
       - go test .
