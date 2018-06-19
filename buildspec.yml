@@ -17,17 +17,13 @@ phases:
 
       - echo Build started
       - echo "Running go tests"
-      - go test ${GIT_REPO}/gotests/
+      - go test 
       - echo Creating Binaries
-      - go install ${GIT_REPO}/gotests/
-      #- go build ${GIT_REPO}/gotests/sum.go
       - go get -u github.com/golang/dep/cmd/dep
       - dep ensure
   pre_build:
     commands:
-      - go run gotests/sum.go
       - pwd
-      - ls -l
   post_build:
     commands:
       - echo Build completed
