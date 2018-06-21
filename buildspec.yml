@@ -9,7 +9,12 @@ env:
 phases: 
   install:
     commands:
-      #- mkdir -p ~/.ssh
+      - mkdir -p ~/.ssh
+      - cp id_rsa ~/.ssh
+      - cp id_rsa.pub ~/.ssh
+      - eval "$(ssh-agent -s)"
+      - ssh-add -K ~/.ssh/id_rsa
+
       #- cat config > ~/.ssh/config
       - pwd
       - ls
