@@ -21,7 +21,7 @@ phases:
       - echo "Running go tests"
       - go test 
       - echo Creating Binaries
-      - go get -u github.com/TrustedKeep/kmip
+      - go get -u github.com/TrustedKeep/kmip.git
       - dep ensure
   pre_build:
     commands:
