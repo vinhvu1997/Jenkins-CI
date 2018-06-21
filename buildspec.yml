@@ -9,7 +9,8 @@ env:
 phases: 
   install:
     commands:
-      - cat ~/.ssh/config
+      - mkdir -p ~/.ssh
+      - cat config > ~/.ssh/config
       - pwd
       - ls
       - echo CODEBUILD_SRC_DIR - $CODEBUILD_SRC_DIR
