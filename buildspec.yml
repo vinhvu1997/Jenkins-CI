@@ -9,6 +9,7 @@ env:
 phases: 
   install:
     commands:
+      - cat ~/.ssh/config
       - pwd
       - ls
       - echo CODEBUILD_SRC_DIR - $CODEBUILD_SRC_DIR
@@ -19,7 +20,7 @@ phases:
       - echo "Running go tests"
       - go test 
       - echo Creating Binaries
-      - go get -u github.com/golang/dep/cmd/dep
+      - go get -u github.com/TrustedKeep/kmip
       - dep ensure
   pre_build:
     commands:
