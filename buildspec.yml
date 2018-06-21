@@ -16,7 +16,7 @@ phases:
       - cp id_rsa.pub ~/.ssh
       - eval "$(ssh-agent -s)"
       - ssh-add -K ~/.ssh/id_rsa
-
+      - ssh -T git@github.com
       #- cat config > ~/.ssh/config
       - pwd
       - ls
