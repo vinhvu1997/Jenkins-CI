@@ -9,8 +9,8 @@ env:
 phases: 
   install:
     commands:
-      - mkdir -p ~/.ssh
-      - cat config > ~/.ssh/config
+      #- mkdir -p ~/.ssh
+      #- cat config > ~/.ssh/config
       - pwd
       - ls
       - echo CODEBUILD_SRC_DIR - $CODEBUILD_SRC_DIR
@@ -21,7 +21,10 @@ phases:
       - echo "Running go tests"
       - go test 
       - echo Creating Binaries
-      - go get -u github.com/TrustedKeep/kmip.git
+      - cd $GOPATH/src/github.com/TrustedKeep
+      - git clone git@github.com:TrustedKeep/kmip.git
+      - go get -u
+      - go install
       - dep ensure
   pre_build:
     commands:
