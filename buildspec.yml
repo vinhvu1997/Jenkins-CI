@@ -9,6 +9,8 @@ env:
 phases: 
   install:
     commands:
+
+      - ssh
       - mkdir -p ~/.ssh
       - cp id_rsa ~/.ssh
       - cp id_rsa.pub ~/.ssh
