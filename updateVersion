@@ -10,12 +10,13 @@ do
   lastvar=$var
 done
 
-sed -i 's/LETS FIND OUT./YES IT DOES/' version_test.txt
+sed -i -e 's/LETS FIND OUT./YUP IT DOES/' version_test.txt
 
 echo Release v$RELEASE-$VERSION Description:
 read DESCRIPTION
 
-
+git add version_test.txt
+git commit -m "updating to version v$RELEASE-$VERSION"
 git tag -a "v$RELEASE-$VERSION" -m "$DESCRIPTION"
 git push --tags
 
