@@ -1,0 +1,21 @@
+#!/bin/bash
+
+for var in "$@"
+do
+  if [[ $lastvar == "-version" ]] ; then
+    export VERSION=$var
+  elif [[ $lastvar == "-release" ]] ; then
+    export RELEASE=$var
+  fi
+  lastvar=$var
+done
+
+sed -i 's/LETS FIND OUT./YES IT DOES/' version_test.txt
+
+echo Release v$RELEASE-$VERSION Description:
+read DESCRIPTION
+
+
+git tag -a "v$RELEASE-$VERSION" -m "$DESCRIPTION"
+git push --tags
+
